@@ -540,9 +540,12 @@ p:empty {
 
 section.why-bpmp {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   background-color: #b8e04a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-wrapper {
@@ -552,12 +555,14 @@ section.why-bpmp {
   width: 100%;
   height: 100%;
   position: relative;
-  padding: 0 2rem;
+  /* padding: 0 3rem; */
+  gap: 2rem;
 }
 
 .image-container {
   width: 40%;
   height: 100%;
+  position: relative;
   overflow: hidden;
 }
 
@@ -565,7 +570,7 @@ section.why-bpmp {
   position: absolute;
   top: 0;
   left: 0;
-  width: 40%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
@@ -581,28 +586,29 @@ section.why-bpmp {
   z-index: 2;
   flex: 1;
   margin-left: 5%;
+  margin-right: 5%;
 }
 
 .title {
   font-size: 54px;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #1A2B6D;
-  font-family: "Nulshock Heavy";
+  color: #1a2b6d;
+  font-family: "Nulshock Heavy", sans-serif;
 }
 
 .subtitle {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 40px;
-  font-family: "Dosis Bold";
+  font-family: "Dosis Bold", sans-serif;
 }
 
 .tabs {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-family: "Dosis Bold";
+  font-family: "Dosis Bold", sans-serif;
 }
 
 .tab {
@@ -611,7 +617,7 @@ section.why-bpmp {
   gap: 20px;
   transition: all 0.5s ease;
   opacity: 0.5;
-  background-color: white;
+  background-color: #fff;
   padding: 18px;
   border-radius: 8px;
   cursor: pointer;
@@ -629,6 +635,117 @@ section.why-bpmp {
 .tab-text {
   font-size: 16px;
   margin: 0;
+  line-height: 1.5;
+}
+
+/* ===================== */
+/* 📱 RESPONSIVE STYLES */
+/* ===================== */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .image-container {
+    width: 80%;
+    height: 300px;
+    margin-bottom: 2rem;
+  }
+
+  .text-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .tab-number {
+    font-size: 28px;
+  }
+
+  .tab-text {
+    font-size: 15px;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  section.why-bpmp {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 350px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .tab {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .tab-number {
+    font-size: 26px;
+  }
+
+  .tab-text {
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .content-wrapper {
+    padding: 1.5rem;
+    margin-left: 20px;
+  }
+
+  .image-container {
+    height: 400px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .tab {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .tab-number {
+    font-size: 22px;
+  }
+
+  .tab-text {
+    font-size: 13px;
+  }
 }
 
 .empty-section {
@@ -636,10 +753,34 @@ section.why-bpmp {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 0 20px; /* prevent text cutoff on small screens */
 }
 
 .empty-section h2 {
   font-size: 60px;
   color: #333;
   font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .empty-section h2 {
+    font-size: 50px;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+  .empty-section h2 {
+    font-size: 40px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .empty-section h2 {
+    font-size: 30px;
+  }
 }

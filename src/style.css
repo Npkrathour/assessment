@@ -719,7 +719,9 @@ section.why-bpmp {
 @media (max-width: 480px) {
   .content-wrapper {
     padding: 1.5rem;
-    margin-left: 20px;
+  }
+  .tabs {
+    padding-left: 20px;
   }
 
   .image-container {
@@ -784,3 +786,4 @@ section.why-bpmp {
     font-size: 30px;
   }
 }
+
